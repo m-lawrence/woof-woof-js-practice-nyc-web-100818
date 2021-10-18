@@ -20,4 +20,15 @@ function displayDogName(dogObj) {
   dogBar.append(dogSpan)
 }
 
+dogBar.addEventListener('click', function(e) {
+  const pupId = e.target.dataset.id
+  fetch(`http://localhost:3000/pups/${pupId}`)
+    .then(r => r.json())
+    .then(showMorePup)
+})
+
+function showMorePup(pupObj) {
+  
+}
+
 getDogNames()
